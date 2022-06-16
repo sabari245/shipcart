@@ -1,4 +1,4 @@
-import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
+import {GoogleAuthentication, GithubAuthentication, FacebookAuthentication} from "../logics/loginLogic.js"
 
 function Login() {
   return (
@@ -19,6 +19,7 @@ function Login() {
                 <button
                   className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
  hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100"
+                  onClick={GoogleAuthentication}
                 >
                   <div className="relative flex items-center space-x-4 justify-center">
                   <img src="/svg/google.svg" className="absolute left-0 w-5" alt="google logo"/>
@@ -30,6 +31,7 @@ function Login() {
                 <button
                   className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
  hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100"
+                  onClick={GithubAuthentication}
                 >
                   <div className="relative flex items-center space-x-4 justify-center">
                   <img src="/svg/github.svg" className="absolute left-0 w-5" alt="google logo"/>
@@ -41,6 +43,7 @@ function Login() {
                 <button
                   className="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300 
  hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100"
+                  onClick={FacebookAuthentication}
                 >
                   <div className="relative flex items-center space-x-4 justify-center">
                   <img src="/svg/facebook.svg" className="absolute left-0 w-5" alt="google logo"/>
