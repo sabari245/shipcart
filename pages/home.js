@@ -4,20 +4,26 @@ import Footer from "../components/home/Footer";
 import Cards from "../components/home/Cards";
 import { getProducts } from "../components/logics/firestoreLogics";
 import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../components/logics/firebase";
 
 function HomeScreen() {
 
     const [products, setProducts] = useState([]);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         getProducts().then(products => {
             setProducts(products);
         });
+        onAuthStateChanged(auth, (user) => {
+          setUser(user);
+    })
     }, []);
 
   return (
     <div>
-      <NavBar />
+      <NavBar user={user}/>
       <Banner />
       <div className="bg-white">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

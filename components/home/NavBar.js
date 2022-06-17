@@ -1,4 +1,7 @@
-function NavBar () {
+import { signOut } from "firebase/auth";
+import { auth } from "../logics/firebase";
+
+function NavBar ({user}) {
     return(
         <div className="navbar bg-base-100">
   <div className="flex-1">
@@ -11,7 +14,7 @@ function NavBar () {
     <div className="dropdown dropdown-end">
       <label tabindex="0" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img src="https://api.lorem.space/image/face?hash=33791" />
+          {user ? <img src={user.photoURL} alt="avatar" className="rounded-full" /> : <img src="https://via.placeholder.com/150" alt="avatar" className="rounded-full" />}
         </div>
       </label>
       <ul tabindex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -22,7 +25,9 @@ function NavBar () {
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><a className="text-red-500" onClick={()=>{
+          signOut(auth);
+        }}>Logout</a></li>
       </ul>
     </div>
   </div>

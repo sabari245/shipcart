@@ -1,6 +1,6 @@
 function Cards({product}) {
     return(
-      <a href="#" className="group">
+      <a href={"/products/" + product.url} className="group">
         <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
           <img src={product.image} alt={product.description} className="w-full h-full object-center object-cover group-hover:opacity-75"/>
         </div>
