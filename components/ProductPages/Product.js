@@ -251,10 +251,16 @@ function Product1(){
           </div>
         </div>
       </div>
-    </div>
+   
+  
+  <div class="mt-5 items-center justify-between">
+  <h2 class="font-bold mb-2">Comments</h2>
+  <textarea class="textarea textarea-success border-cyan-300 h-36" placeholder="Bio"></textarea>
   </div>
- 
+  </div>
+  </div>
   <Trending_Products/>
+
 </div>
     )
 }
