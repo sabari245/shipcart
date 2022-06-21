@@ -12,12 +12,12 @@ function NavBar ({user}) {
       <input type="text" placeholder="Search" className="input input-bordered" />
     </div>
     <div className="dropdown dropdown-end">
-      <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+      <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           {user ? <img src={user.photoURL} alt="avatar" className="rounded-full" /> : <img src="https://via.placeholder.com/150" alt="avatar" className="rounded-full" />}
         </div>
       </label>
-      <ul tabindex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+      <ul tabIndex="0" className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li>
           <a className="justify-between">
             Profile
